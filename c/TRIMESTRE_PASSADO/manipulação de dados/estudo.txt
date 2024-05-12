@@ -1,0 +1,171 @@
+Nome: 
+alberto
+--------------------------------------
+Nome em Caps Lock: 
+alberto
+--------------------------------------
+Codigo usado para transformar o nome em Caps Lock: 
+for(int i = 0; i < strlen(nome); i++){
+    nomeCaps[i] = toupper(nome[i]);
+    printf("%c", nomeCaps[i]);
+}
+nomeCaps[strlen(nome)] = '\0';
+--------------------------------------
+strcat(nome, "ABC"); *Adiciona ABC ha frente do nome*
+--------------------------------------
+nome[strlen(nome)-3] = '\0'; *Tira os 3 ultimos caracteres do nome*
+--------------------------------------
+Inversão da string: 
+for(int i = strlen(nome)-1; i >= 0; i--){
+    printf("%c", nome[i]);
+}
+--------------------------------------
+strcpy(nomeCaps, nome); *Copia procedimento de uma string para outra*
+--------------------------------------
+Matriz: 
+for(int i = 0; i < 3; i++){
+    for(int j = 0; j < 3; j++){
+        printf("%d ", matriz[i][j]);
+    }
+    printf("\n");
+}
+--------------------------------------
+Matriz transposta: 
+for(int i = 0; i < 3; i++){
+    for(int j = 0; j < 3; j++){
+        printf("%d ", matriz[j][i]);
+    }
+    printf("\n");
+}
+--------------------------------------
+Inserir dados na matriz: 
+for(int i = 0; i < 3; i++){
+    for(int j = 0; j < 3; j++){
+        printf("Digite um numero: ");
+        scanf("%d", &matriz[i][j]);
+    }
+}
+--------------------------------------
+Remover dados da matriz: 
+for(int i = 0; i < 3; i++){
+    for(int j = 0; j < 3; j++){
+        matriz[i][j] = 0;
+    }
+}
+--------------------------------------
+Array de inteiros: 
+int array[5] = {1, 2, 3, 4, 5};
+for(int i = 0; i < 5; i++){
+    printf("%d ", array[i]);
+}
+--------------------------------------
+Array de inteiros invertido: 
+for(int i = 4; i >= 0; i--){
+    printf("%d ", array[i]);
+}
+--------------------------------------
+Remover dados dos arrays: 
+for(int i = 0; i < 5; i++){
+    array[i] = 0;
+}
+--------------------------------------
+Todas as funções para manipulação de strings: 
+Todas as funções para manipulação de strings: 
+1. strcpy - Copia uma string para outra
+2. strcat - concatena duas strings
+3. strlen - Retorna o tamanho de uma string
+4. strcmp - Compara duas strings
+5. strchr - Encontra a primeira ocorrência de um caractere em uma string
+6. strstr - Encontra a primeira ocorrência de uma string em outra string
+7. sprintf - Escreve uma string formatada em uma variável de saída
+8. sscanf - Lê uma string formatada de uma variável de entrada
+9. toupper - Converte letras minúsculas em maiúsculas
+10. tolower - Converte letras maiúsculas em minúsculas
+11. isalpha - Verifica se um caractere é uma letra do alfabeto
+12. isdigit - verifica se um caractere é um dígito
+13. isalnum - Verifica se um caractere é alfanumérico
+14. isspace - Verifica se um caractere é um espaço em branco
+15. isupper - Verifica se um caractere é uma letra maiúscula
+16. islower - Verifica se um caractere é uma letra minúscula
+--------------------------------------
+Todas as operações para manipulação de matrizes: 
+1. Criação de uma matriz EX: int matriz[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+2. Acesso a elementos de uma matriz EX: matriz[0][0] = 10;
+3. Modificação de elementos de uma matriz EX: matriz[0][0] = 10;
+4. Percorrer uma matriz (usando loops aninhados)
+5. Adição de matrizes
+6. Multiplicação de matrizes
+7. Transposição de uma matriz
+8. Inversão de uma matriz
+9. Remoção de elementos de uma matriz
+---------------------------------------
+Todas as operações para manipulação de arrays: 
+1. Criação de um array EX: int array[5] = {1, 2, 3, 4, 5};
+2. Acesso a elementos de um array EX: array[0] = 10;
+3. Modificação de elementos de um array EX: array[0] = 10;
+4. Percorrer um array (usando loop) EX: for(int i = 0; i < 5; i++){ printf("%d ", array[i]); }
+5. Ordenação de um array (usando algoritmos de ordenação como bubble sort, quick sort, etc.)
+6. Pesquisa em um array (usando algoritmos de pesquisa como pesquisa linear, pesquisa binária, etc.)
+7. Inserção de elementos em um array (usando algoritmos de inserção como inserção no início, inserção no final, etc.)
+8. Remoção de elementos de um array (usando algoritmos de remoção como remoção no início, remoção no final, etc.)
+--------------------------------------
+Todas as operações para manipulação de arquivos: 
+1. Abertura de um arquivo (usando fopen)
+2. Leitura de um arquivo (usando fgets)
+3. Escrita em um arquivo (usando fprintf)
+4. Fechamento de um arquivo (usando fclose)
+5. Verificação de erros ao abrir um arquivo (usando fopen)
+6. Verificação de erros ao ler um arquivo (usando fgets)
+7. Verificação de erros ao escrever em um arquivo (usando fprintf)
+8. Verificação de erros ao fechar um arquivo (usando fclose)
+--------------------------------------
+iMPRIMIR NO TXT: 
+void imprimir_no_txt(char *nome_arquivo, char *texto){
+    FILE *arquivo;
+    arquivo = fopen(nome_arquivo, "a");
+    if(arquivo == NULL){
+        printf("Erro ao abrir o arquivo\n");
+        exit(1);
+    }
+    fprintf(arquivo, "%s\n", texto);
+    fclose(arquivo);
+}
+--------------------------------------
+LER ARQUIVO: 
+void ler_arquivo(char *nome_arquivo){
+    FILE *arquivo;
+    char texto[100];
+    arquivo = fopen(nome_arquivo, "r");
+    if(arquivo == NULL){
+        printf("Erro ao abrir o arquivo\n");
+        exit(1);
+    }
+    while(fgets(texto, 100, arquivo) != NULL){
+        printf("%s", texto);
+    }
+    fclose(arquivo);
+}
+--------------------------------------
+Struct: 
+struct Pessoa{
+    char nome[100];
+    int idade;
+};
+--------------------------------------
+Função para imprimir struct: 
+void imprimir_pessoa(struct Pessoa p){
+    printf("Nome: %s\n", p.nome);
+    printf("Idade: %d\n", p.idade);
+}
+--------------------------------------
+Manipular a struct: 
+struct Pessoa p1;
+strcpy(p1.nome, "João");
+p1.idade = 20;
+imprimir_pessoa(p1);
+--------------------------------------
+Nome: 
+fabio
+--------------------------------------
+Nome em Caps Lock: 
+fabio
