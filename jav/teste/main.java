@@ -8,12 +8,13 @@ public class main {
     p.setNomePais("Brasil");
     p.setPopulacao(200000000);
     p.setCapital(new cidade("Brasília", 3000000));
+    p.setCidades(new ArrayList<cidade>());
 
     System.out.println("Nome do pais: " + p.getNomePais());
     System.out.println("Populacao: " + p.getPopulacao());
     System.out.println("Capital: " + p.getCapital().getNomeCidade());
     System.out.println("Populacao da capital: " + p.getCapital().getPopulacao());
-
+    
 
     continente c = new continente();
 
